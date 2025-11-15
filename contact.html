@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio — Contact & Projects</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --page:#faf6ff;
+    --panel:#fff;
+    --accent1:#8e2de2;
+    --accent2:#c77dff;
+    --muted:#6c6c76;
+    --nav-h:70px;
+    --max-w:1200px;
+    --card-radius:14px;
+    --shadow:0 10px 30px rgba(14,12,36,0.06);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+    background:linear-gradient(180deg,#fbf8ff 0%,var(--page) 100%);
+    color:#111;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    scroll-behavior:smooth;
+  }
+
+  /* HEADER */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(255,255,255,0.98);
+    height:var(--nav-h);
+    display:flex; align-items:center; justify-content:center;
+    border-bottom:1px solid rgba(142,45,226,0.06);
+    backdrop-filter:blur(4px);
+  }
+  .nav-inner{ width:100%; max-width:var(--max-w); padding:0 20px; display:flex; align-items:center; position:relative; }
+  .logo{ font-size:22px; font-weight:800; color:var(--accent1); }
+  .nav-center{ position:absolute; left:50%; transform:translateX(-50%); display:flex; gap:24px; align-items:center; }
+  .nav-center a{ text-decoration:none; color:#444; font-weight:600; font-size:15px; cursor:pointer; }
+  .nav-center a:hover, .nav-center a.active{ color:var(--accent1); }
+  .btn{ margin-left:auto; padding:8px 18px; border-radius:28px; background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#fff; text-decoration:none; font-weight:700; }
+
+  .spacer{ height: var(--nav-h); }
+
+  main{ padding:28px 16px 80px; max-width:var(--max-w); margin:0 auto; }
+
+  h1,h2{ text-align:center; color:var(--accent1); margin:0; }
+  .line{ width:80px; height:6px; margin:12px auto 20px; border-radius:8px; background:linear-gradient(90deg,var(--accent1),var(--accent2)); }
+
+  p.lead{ text-align:center; color:var(--muted); max-width:880px; margin:12px auto 0; }
+
+  /* ===== Projects styles (from your snippet) ===== */
+  .projects-header{ text-align:center; margin:22px 0 30px; }
+  .projects-header h1{ font-size:44px; font-weight:800; color:var(--accent1); margin-bottom:6px; }
+  .projects-header .underline{ display:inline-block; height:6px; width:80px; border-radius:6px; background:linear-gradient(90deg,var(--accent1),var(--accent2)); }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+    align-items:start;
+    margin-top:18px;
+  }
+  .card{
+    background:var(--panel);
+    border-radius:12px;
+    padding:24px;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(145,135,170,0.08);
+    display:flex; flex-direction:column; gap:14px; min-height:280px;
+  }
+  .card-header{ display:flex; gap:14px; align-items:flex-start; }
+  .icon{ width:56px; height:56px; border-radius:12px; display:grid; place-items:center; background:linear-gradient(180deg, rgba(142,45,226,0.09), rgba(199,125,255,0.06)); }
+  .card-title{ font-size:20px; font-weight:800; margin:0; }
+  .badge{ margin-left:auto; align-self:flex-start; background:linear-gradient(90deg, rgba(199,125,255,0.12), rgba(142,45,226,0.06)); padding:6px 10px; border-radius:999px; font-weight:700; color:var(--accent1); border:1px solid rgba(142,45,226,0.08); font-size:12px; }
+  .desc{ color:var(--muted); font-size:15px; line-height:1.7; margin:0; }
+  .klabel{ color:var(--accent1); font-weight:700; margin-top:6px; font-size:14px; }
+  .features{ margin:8px 0 0 18px; color:var(--muted); font-size:14px; }
+  .features li{ margin:8px 0; }
+  .card:hover{ transform:translateY(-6px); transition:transform 220ms ease; box-shadow:0 18px 38px rgba(14,12,36,0.08); }
+
+  /* ===== Contact styles (simple cards) ===== */
+  .contact-panel{ margin-top:36px; background:var(--panel); border-radius:14px; padding:20px; border:1px solid rgba(140,120,170,0.06); box-shadow:var(--shadow); }
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .c-link{ text-decoration:none; color:inherit; display:block; border-radius:12px; overflow:hidden; }
+  .c-card{ padding:14px; border-radius:12px; background:#fff; border:1px solid #eee; display:flex; gap:12px; align-items:center; transition:.18s; }
+  .c-card:hover{ transform:translateY(-4px); box-shadow:0 12px 30px rgba(14,12,36,0.06); }
+  .cicon{ width:56px; height:56px; border-radius:10px; display:grid; place-items:center; background:linear-gradient(180deg, rgba(142,45,226,0.06), rgba(199,125,255,0.04)); color:var(--accent1); }
+  .cbody h4{ margin:0; font-size:15px; font-weight:800; }
+  .cbody p{ margin:6px 0 0; color:var(--muted); font-size:14px; }
+
+  .send{ display:inline-block; padding:10px 22px; border-radius:28px; background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#fff; text-decoration:none; font-weight:700; margin:18px auto 0; }
+
+  @media(max-width:900px){
+    .grid{ grid-template-columns:1fr; padding:0 12px; }
+    .contact-grid{ grid-template-columns:1fr; }
+    .projects-header h1{ font-size:36px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-inner">
+      <div class="logo">Portfolio</div>
+
+      <nav class="nav-center" aria-label="Main menu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn" href="#contact">Get in Touch</a>
+    </div>
+  </header>
+
+  <div class="spacer" aria-hidden="true"></div>
+
+  <main>
+
+    <!-- hidden placeholders for other sections so header links work -->
+    <div id="home"></div>
+    <div id="about"></div>
+    <div id="education"></div>
+    <div id="skills"></div>
+
+    <!-- PROJECTS (inserted per your snippet) -->
+    <section id="projects" class="projects-header" aria-labelledby="projects-heading">
+      <h1 id="projects-heading">My Projects</h1>
+      <div class="underline"></div>
+    </section>
+
+    <section aria-label="Project list">
+      <div class="grid">
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="card-header">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30"><path d="M13 2L3 14h7l-1 8 10-12h-7z" fill="currentColor"/></svg>
+            </div>
+            <div style="flex:1">
+              <h3 class="card-title">Home Automation System</h3>
+            </div>
+          </div>
+
+          <p class="desc">A smart system that automatically controls fans and lights based on environmental conditions.</p>
+
+          <div>
+            <div class="klabel">Key Features:</div>
+            <ul class="features">
+              <li>Automatic fan control based on temperature</li>
+              <li>Motion-activated lighting system</li>
+              <li>Energy-efficient smart home solution</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="card-header">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30"><path d="M3 7a2 2 0 0 1 2-2h2V3h-2A4 4 0 0 0 1 7v2h2V7zM21 7v2h2V7a4 4 0 0 0-4-4h-2v2h2a2 2 0 0 1 2 2zM3 17v2a2 2 0 0 0 2 2h2v-2H5a2 2 0 0 1-2-2zM21 17a2 2 0 0 1-2 2h-2v2h2a4 4 0 0 0 4-4v-2h-2zM8 11a4 4 0 1 1 8 0 4 4 0 0 1-8 0zm4-2a2 2 0 1 0 .001 4.001A2 2 0 0 0 12 9z" fill="currentColor"/></svg>
+            </div>
+
+            <div style="flex:1">
+              <h3 class="card-title">Turnstile Gate Attendance System</h3>
+            </div>
+
+            <div class="badge">Ongoing</div>
+          </div>
+
+          <p class="desc">A facial recognition-based automated attendance tracking and gate system.</p>
+
+          <div>
+            <div class="klabel">Key Features:</div>
+            <ul class="features">
+              <li>Real-time facial recognition</li>
+              <li>Automated gate opening mechanism</li>
+              <li>Contactless attendance tracking</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT (your contact-only cards inserted here) -->
+    <section id="contact" style="margin-top:40px;">
+      <h2>Get In Touch</h2>
+      <div class="line"></div>
+      <p class="lead">I’m always excited to connect with fellow engineers, collaborate on projects, or discuss opportunities in VLSI and electronics design.</p>
+
+      <div class="contact-panel">
+        <div class="contact-grid">
+          <!-- Email -->
+          <a class="c-link" href="mailto:asmitalonkar226@gmail.com" title="Email">
+            <div class="c-card" role="button" aria-label="Email">
+              <div class="cicon">📧</div>
+              <div class="cbody">
+                <h4>Email</h4>
+                <p>asmitalonkar226@gmail.com</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Phone -->
+          <a class="c-link" href="tel:+917498708962" title="Phone">
+            <div class="c-card" role="button" aria-label="Phone">
+              <div class="cicon">📞</div>
+              <div class="cbody">
+                <h4>Phone</h4>
+                <p>+91 7498708962</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- LinkedIn -->
+          <a class="c-link" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener" title="LinkedIn">
+            <div class="c-card" role="link" aria-label="LinkedIn">
+              <div class="cicon">🔗</div>
+              <div class="cbody">
+                <h4>LinkedIn</h4>
+                <p>Connect on LinkedIn</p>
+              </div>
+            </div>
+          </a>
+
+          <!-- GitHub -->
+          <a class="c-link" href="https://github.com/your-username" target="_blank" rel="noopener" title="GitHub">
+            <div class="c-card" role="link" aria-label="GitHub">
+              <div class="cicon">💻</div>
+              <div class="cbody">
+                <h4>GitHub</h4>
+                <p>View my projects</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div style="text-align:center; margin-top:18px;">
+          <a class="send" href="mailto:asmitalonkar226@gmail.com">Send me an email</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Smooth header-offset scrolling & active nav highlight
+    (function(){
+      const links = Array.from(document.querySelectorAll('.nav-center a'));
+      const ids = ['home','about','education','skills','projects','contact'];
+      function scrollToId(id){
+        const el = document.getElementById(id) || document.querySelector('[id="'+id+'"]');
+        if(!el) return;
+        const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 70;
+        const top = el.getBoundingClientRect().top + window.scrollY - navH + 8;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+      links.forEach(a=>{
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          const tgt = this.getAttribute('href').slice(1);
+          scrollToId(tgt);
+          history.replaceState(null,'', '#'+tgt);
+        });
+      });
+
+      function onScroll(){
+        const pos = window.scrollY + window.innerHeight/3;
+        let cur = 'home';
+        ids.forEach(id=>{
+          const el = document.getElementById(id);
+          if(!el) return;
+          const top = el.getBoundingClientRect().top + window.scrollY;
+          if(pos >= top) cur = id;
+        });
+        links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#'+cur));
+      }
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+
+      // if page loaded with hash — scroll with offset
+      if(location.hash){
+        setTimeout(()=> {
+          const id = location.hash.slice(1);
+          if(id) scrollToId(id);
+        }, 50);
+      }
+    })();
+  </script>
+
+</body>
+</html>

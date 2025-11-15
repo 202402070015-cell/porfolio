@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>About — Asmita Lonkar</title>
+<style>
+  :root{
+    --p1:#8e2de2;
+    --p2:#c77dff;
+    --accent:#7b2cbf;
+    --bg:#f6f0fb;
+    --card-bg: #ffffff;
+    --muted:#6b6b6b;
+    --shadow: 0 8px 20px rgba(11,20,60,0.06);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: "Poppins", Arial, sans-serif;
+    background:var(--bg);
+    color:#222;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* NAVBAR */
+  .navbar{
+    position:fixed;
+    top:0; left:0; right:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 24px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 4px 18px rgba(11,20,60,0.06);
+    z-index:100;
+  }
+  .nav-left{
+    font-weight:800;
+    color:var(--p2);
+    font-size:22px;
+  }
+  .nav-center{
+    display:flex;
+    gap:18px;
+    align-items:center;
+  }
+  .nav-center a{
+    color:#444;
+    text-decoration:none;
+    font-weight:600;
+    font-size:15px;
+    padding:6px 4px;
+  }
+  .nav-center a:hover,
+  .nav-center a.active{
+    color:var(--p1);
+  }
+  .nav-right a{
+    background: linear-gradient(90deg,var(--p1),var(--p2));
+    color:white;
+    padding:10px 18px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+  }
+
+  .wrap{
+    max-width:1100px;
+    margin: 0 auto;
+    padding: 120px 20px 80px; /* Top padding increased (navbar space) */
+  }
+
+  /* Page heading */
+  .page-head{
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .page-title{
+    font-size:34px;
+    color:var(--accent);
+    font-weight:800;
+    margin:0;
+  }
+  .title-underline{
+    width:60px;
+    height:6px;
+    background: linear-gradient(90deg,var(--p1),var(--p2));
+    border-radius:6px;
+    margin:10px auto 0;
+  }
+
+  /* two-column layout */
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:28px;
+    align-items:start;
+    margin-top:28px;
+  }
+
+  /* left column */
+  .left {
+    padding:10px 2px;
+  }
+  .section-title{
+    font-size:20px;
+    font-weight:800;
+    color:#222;
+    margin-bottom:12px;
+  }
+  .para{
+    color:var(--muted);
+    line-height:1.7;
+    font-size:15px;
+    margin-bottom:18px;
+  }
+
+  /* right */
+  .right{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .info-card{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+    padding:18px;
+    background: var(--card-bg);
+    border-radius:12px;
+    box-shadow: var(--shadow);
+    border:1px solid rgba(124,58,237,0.06);
+  }
+  .icon-wrap{
+    width:56px;
+    height:56px;
+    border-radius:12px;
+    background: linear-gradient(180deg, rgba(139,71,255,0.12), rgba(199,125,255,0.12));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+  .card-title{
+    font-size:16px;
+    font-weight:700;
+    color:#222;
+    margin-bottom:6px;
+  }
+  .card-sub{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.45;
+  }
+
+  /* responsive */
+  @media(min-width:900px){
+    .grid{
+      grid-template-columns: 1fr 420px;
+      gap:40px;
+    }
+    .page-title{ font-size:40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-left">Portfolio</div>
+
+  <nav class="nav-center">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="nav-right">
+    <a href="contact.html">Get in Touch</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <header class="page-head">
+    <h1 class="page-title">About Me</h1>
+    <div class="title-underline"></div>
+  </header>
+
+  <section class="grid">
+
+    <!-- LEFT -->
+    <div class="left">
+      <h3 class="section-title">Get to know me!</h3>
+
+      <p class="para">
+        I am an enthusiastic learner and aspiring engineer interested in the VLSI domain. 
+        I enjoy exploring circuit design, communication systems, and automation technologies.
+      </p>
+
+      <p class="para">
+        I'm curious, creative, and motivated to apply my knowledge through practical projects and simulations. 
+        Whether it's designing smart home automation systems or working on facial recognition 
+        attendance systems, I love solving real-world problems with technology.
+      </p>
+
+      <p class="para">
+        Outside academics, I enjoy learning new tools, building projects, and improving my 
+        technical and professional skills.
+      </p>
+
+      <p class="para">Want more details? Check my <a href="projects.html">projects</a> or <a href="contact.html">contact me</a>.</p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+
+      <!-- Education card -->
+      <article class="info-card">
+        <div class="icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2 1 7l11 5 9-4.09V17h2V7L12 2z" fill="#8a5cff"/>
+            <path d="M11 12.2V21h2v-8.8l-1 .45-1-.45z" fill="#6b46d9"/>
+          </svg>
+        </div>
+        <div>
+          <div class="card-title">Education</div>
+          <div class="card-sub">B.Tech in Electronics & Telecommunication<br>MITAOE College, Alandi, Pune</div>
+        </div>
+      </article>
+
+      <!-- Interest card -->
+      <article class="info-card">
+        <div class="icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="7" width="18" height="6" rx="1.5" fill="#9b59ff"/>
+            <path d="M12 3v6" stroke="#6b46d9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="card-title">Interests</div>
+          <div class="card-sub">VLSI Design & Circuit Development<br>Communication Systems & Automation</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
+

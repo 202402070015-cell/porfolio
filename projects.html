@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — My Projects</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --page-bg: #faf7ff;
+      --panel-bg: #fff;
+      --accent-1: #8e2de2;
+      --accent-2: #c77dff;
+      --muted: #6c6c76;
+      --card-radius: 12px;
+      --shadow-sm: 0 6px 18px rgba(14,12,36,0.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #fbf9ff 0%, var(--page-bg) 100%);
+      color:#111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      scroll-behavior:smooth;
+    }
+
+    /* ===== HERO / Projects Wrapper ===== */
+    main{ padding:28px 16px 80px; }
+    .container{ max-width:1200px; margin:0 auto; }
+
+    .projects-header{
+      text-align:center;
+      margin-top:22px;
+      margin-bottom:30px;
+    }
+    .projects-header h1{
+      margin:0;
+      color:var(--accent-1);
+      font-size:44px;
+      font-weight:800;
+    }
+    .projects-header .underline{
+      display:inline-block;
+      height:6px;
+      width:80px;
+      margin-top:12px;
+      border-radius:6px;
+      background:linear-gradient(90deg,var(--accent-1),var(--accent-2));
+      opacity:0.95;
+    }
+
+    /* ===== CARDS GRID ===== */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:28px;
+      align-items:start;
+    }
+
+    .card{
+      background:var(--panel-bg);
+      border-radius:var(--card-radius);
+      padding:28px;
+      box-shadow:var(--shadow-sm);
+      border:1px solid rgba(145,135,170,0.08);
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      min-height:320px;
+    }
+
+    .card-header{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+    }
+    .icon{
+      width:60px;
+      height:60px;
+      border-radius:12px;
+      display:inline-grid;
+      place-items:center;
+      background: linear-gradient(180deg, rgba(142,45,226,0.09), rgba(199,125,255,0.06));
+      flex:0 0 60px;
+      box-shadow:0 6px 18px rgba(139,82,229,0.04);
+    }
+    .icon svg{ width:30px; height:30px; fill:var(--accent-1); }
+
+    .card-title{
+      font-size:20px;
+      font-weight:800;
+      margin:0;
+      color:#111;
+    }
+
+    .badge{
+      margin-left:auto;
+      align-self:flex-start;
+      background:linear-gradient(90deg, rgba(199,125,255,0.12), rgba(142,45,226,0.06));
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      color:var(--accent-1);
+      border:1px solid rgba(142,45,226,0.08);
+    }
+
+    .desc{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.7;
+      margin:0 0 6px 0;
+    }
+
+    .klabel{
+      color:var(--accent-1);
+      font-weight:700;
+      margin-top:8px;
+      font-size:14px;
+    }
+    .features{
+      margin:8px 0 0 18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .features li{ margin:8px 0; }
+
+    .card:hover{ transform:translateY(-6px); transition:transform 220ms ease; box-shadow:0 18px 38px rgba(14,12,36,0.08); }
+
+    /* ===== Responsive ===== */
+    @media (max-width:1000px){
+      .projects-header h1{ font-size:36px; }
+    }
+    @media (max-width:880px){
+      .grid{ grid-template-columns:1fr; padding:0 18px; }
+      .projects-header h1{ font-size:32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="container">
+
+      <!-- Projects heading -->
+      <section id="projects" class="projects-header" aria-labelledby="projects-heading">
+        <h1 id="projects-heading">My Projects</h1>
+        <div class="underline"></div>
+      </section>
+
+      <!-- Cards Grid -->
+      <section aria-label="Project list">
+        <div class="grid">
+          
+          <!-- Card 1 -->
+          <article class="card">
+            <div class="card-header">
+              <div class="icon">
+                <svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>
+              </div>
+
+              <div style="flex:1">
+                <h3 class="card-title">Home Automation System</h3>
+              </div>
+            </div>
+
+            <p class="desc">
+              A smart system that automatically controls fans and lights based on environmental conditions.
+            </p>
+
+            <div>
+              <div class="klabel">Key Features:</div>
+              <ul class="features">
+                <li>Automatic fan control based on temperature</li>
+                <li>Motion-activated lighting system</li>
+                <li>Energy-efficient smart home solution</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <div class="card-header">
+              <div class="icon">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 7a2 2 0 0 1 2-2h2V3h-2A4 4 0 0 0 1 7v2h2V7zM21 7v2h2V7a4 4 0 0 0-4-4h-2v2h2a2 2 0 0 1 2 2zM3 17v2a2 2 0 0 0 2 2h2v-2H5a2 2 0 0 1-2-2zM21 17a2 2 0 0 1-2 2h-2v2h2a4 4 0 0 0 4-4v-2h-2zM8 11a4 4 0 1 1 8 0 4 4 0 0 1-8 0zm4-2a2 2 0 1 0 .001 4.001A2 2 0 0 0 12 9z"/>
+                </svg>
+              </div>
+
+              <div style="flex:1">
+                <h3 class="card-title">Turnstile Gate Attendance System</h3>
+              </div>
+
+              <div class="badge">Ongoing</div>
+            </div>
+
+            <p class="desc">
+              A facial recognition-based automated attendance tracking and gate system.
+            </p>
+
+            <div>
+              <div class="klabel">Key Features:</div>
+              <ul class="features">
+                <li>Real-time facial recognition</li>
+                <li>Automated gate opening mechanism</li>
+                <li>Contactless attendance tracking</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+</html>
